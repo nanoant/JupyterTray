@@ -5,6 +5,8 @@ README
 
 Launches [Jupyter][Jupyter](Lab) web server (and supplied browser) silently then sits in the tray bar allowing you to shut Jupyter down via tray menu.
 
+![Tray menu](images/screenshot1.png)
+
 Intended to be used in Windows only.
 
 Installation
