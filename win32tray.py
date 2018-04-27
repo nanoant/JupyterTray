@@ -10,7 +10,6 @@
 For now, the demo at the bottom shows how to use it...'''
 
 import os
-import sys
 import win32api         # package pywin32
 import win32con
 import win32gui_struct
@@ -147,7 +146,7 @@ class SysTrayIcon(object):
     def show_menu(self):
         menu = win32gui.CreatePopupMenu()
         self.create_menu(menu, self.menu_options)
-        #win32gui.SetMenuDefaultItem(menu, 1000, 0)
+        # win32gui.SetMenuDefaultItem(menu, 1000, 0)
 
         pos = win32gui.GetCursorPos()
         # See http://msdn.microsoft.com/library/default.asp?url=/library/en-us/winui/menus_0hdi.asp
@@ -232,9 +231,11 @@ if __name__ == '__main__':
     icons = itertools.cycle(glob.glob('*.ico'))
     hover_text = "SysTrayIcon.py Demo"
 
-    def hello(sysTrayIcon): print("Hello World.")
+    def hello(sysTrayIcon):
+        print("Hello World.")
 
-    def simon(sysTrayIcon): print("Hello Simon.")
+    def simon(sysTrayIcon):
+        print("Hello Simon.")
 
     def switch_icon(sysTrayIcon):
         sysTrayIcon.icon = next(icons)
@@ -246,6 +247,7 @@ if __name__ == '__main__':
                                                  ))
                     )
 
-    def bye(sysTrayIcon): print('Bye, then.')
+    def bye(sysTrayIcon):
+        print('Bye, then.')
 
     SysTrayIcon(next(icons), hover_text, menu_options, on_quit=bye, default_menu_index=1)
